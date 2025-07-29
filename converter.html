@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="converter-container">
+            <div class="header">
+                <h1><i class="fas fa-exchange-alt me-3"></i>Currency Converter</h1>
+                <div class="subtitle">Real-time exchange rates</div>
+            </div>
+            
+            <div class="converter-body">
+                <form id="converterForm">
+                    <div class="mb-4">
+                        <label for="amount" class="form-label">Amount to Convert</label>
+                        <input type="number" 
+                               class="form-control amount-input" 
+                               id="amount" 
+                               placeholder="100.00" 
+                               step="0.01" 
+                               min="0.01" 
+                               value="100.00" 
+                               required>
+                    </div>
+
+                    <div class="currency-row">
+                        <div>
+                            <label for="fromCurrency" class="form-label">From</label>
+                            <select class="form-select" id="fromCurrency" required>
+                                <option value="">Select Currency</option>
+                            </select>
+                        </div>
+                        
+                        <button type="button" class="swap-btn" id="swapBtn" title="Swap currencies">
+                            <i class="fas fa-exchange-alt"></i>
+                        </button>
+                        
+                        <div>
+                            <label for="toCurrency" class="form-label">To</label>
+                            <select class="form-select" id="toCurrency" required>
+                                <option value="">Select Currency</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn convert-btn" id="convertBtn">
+                        <span class="btn-text">Convert</span>
+                        <div class="spinner spinner-border spinner-border-sm ms-2" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </button>
+                </form>
+
+                <div class="result-section" id="resultSection">
+                    <div class="result-label">Converted Result:</div>
+                    <div class="result-amount" id="resultAmount">0.00 USD</div>
+                    <div class="exchange-rate" id="exchangeRate"></div>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+       
+    
+</body>
+</html>
